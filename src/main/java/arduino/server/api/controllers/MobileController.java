@@ -27,7 +27,6 @@ public class MobileController {
     @Operation(summary = "Задание конфигурации на устройстве")
     @PostMapping(ApiPaths.MOBILE_CONFIGURATION)
     public DeviceConfiguration createConfig(@PathVariable String deviceId, @RequestBody DeviceConfiguration deviceConfiguration) {
-        log.info(Integer.toString(deviceConfiguration.maxCriticalTemperature()));
         return mobileService.createConfig(deviceId, deviceConfiguration);
     }
 

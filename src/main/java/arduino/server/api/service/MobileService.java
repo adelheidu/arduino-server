@@ -33,7 +33,6 @@ public class MobileService {
     }
 
     public List<Temperature> getTemperature(String deviceId) {
-
         return mobileRepository.getTemerature(deviceId).
                 stream().
                 map(temperatureMapper::map)
