@@ -13,27 +13,27 @@ import org.springframework.web.servlet.NoHandlerFoundException;
 public class ApiExceptionHandler {
 
     @ExceptionHandler(value = MethodArgumentNotValidException.class)
-    public ResponseEntity<ExceptionMessage> handleMethodArgumentNotValidException(MethodArgumentNotValidException ex) {
+    public ResponseEntity<ExceptionMessage> handleMethodArgumentNotValidException() {
         return buildResponse(ExceptionTitles.INVALID_ARGUMENT);
     }
 
     @ExceptionHandler(value = {MethodArgumentTypeMismatchException.class})
-    public ResponseEntity<ExceptionMessage> handleMethodArgumentTypeMismatchException(MethodArgumentTypeMismatchException ex) {
+    public ResponseEntity<ExceptionMessage> handleMethodArgumentTypeMismatchException() {
         return buildResponse(ExceptionTitles.INVALID_ARGUMENT);
     }
 
     @ExceptionHandler(value = {HttpMessageNotReadableException.class})
-    public ResponseEntity<ExceptionMessage> handleHttpMessageNotReadableException(HttpMessageNotReadableException ex) {
+    public ResponseEntity<ExceptionMessage> handleHttpMessageNotReadableException() {
         return buildResponse(ExceptionTitles.INVALID_ARGUMENT);
     }
 
     @ExceptionHandler(value = {NoHandlerFoundException.class})
-    public ResponseEntity<ExceptionMessage> handleNoHandlerFoundException(NoHandlerFoundException ex) {
+    public ResponseEntity<ExceptionMessage> handleNoHandlerFoundException() {
         return buildResponse(ExceptionTitles.NOT_FOUND);
     }
 
     @ExceptionHandler(value = RuntimeException.class)
-    public ResponseEntity<ExceptionMessage> handleRuntimeException(RuntimeException ex) {
+    public ResponseEntity<ExceptionMessage> handleRuntimeException() {
         return buildResponse(ExceptionTitles.INTERNAL_ERROR);
     }
 
