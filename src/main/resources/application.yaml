@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/arduino
+    username: arduino
+    password: arduino
+    driver-class-name: org.postgresql.Driver
+  flyway:
+    enabled: true
+    locations:
+      - db.migration
