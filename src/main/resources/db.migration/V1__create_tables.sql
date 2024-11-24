@@ -4,6 +4,7 @@ CREATE TABLE temperature
     device_id       VARCHAR,
     date_time       TIMESTAMP,
     temperature     INTEGER,
+    critical        BOOLEAN,
     PRIMARY KEY(id)
 );
 
