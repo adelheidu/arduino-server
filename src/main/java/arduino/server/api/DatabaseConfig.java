@@ -1,6 +1,7 @@
 package arduino.server.api;
 
-import arduino.server.api.repository.MobileRepository;
+import arduino.server.api.repository.ConfigurationRepository;
+import arduino.server.api.repository.TemperatureRepository;
 import org.jdbi.v3.core.Jdbi;
 import org.jdbi.v3.postgres.PostgresPlugin;
 import org.jdbi.v3.sqlobject.SqlObjectPlugin;
@@ -20,8 +21,13 @@ public class DatabaseConfig {
     }
 
     @Bean
-    public MobileRepository mobileRepository(Jdbi jdbi) {
-        return jdbi.onDemand(MobileRepository.class);
+    public ConfigurationRepository configurationRepository(Jdbi jdbi) {
+        return jdbi.onDemand(ConfigurationRepository.class);
+    }
+
+    @Bean
+    public TemperatureRepository mobileRepository(Jdbi jdbi) {
+        return jdbi.onDemand(TemperatureRepository.class);
     }
 
 }

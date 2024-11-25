@@ -3,7 +3,8 @@ package arduino.server.api.service;
 import arduino.server.api.mapper.TemperatureMapper;
 import arduino.server.api.model.DeviceConfiguration;
 import arduino.server.api.model.Temperature;
-import arduino.server.api.repository.MobileRepository;
+import arduino.server.api.repository.ConfigurationRepository;
+import arduino.server.api.repository.TemperatureRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -15,25 +16,27 @@ import java.util.List;
 @RequiredArgsConstructor
 public class MobileService {
 
-    private final MobileRepository mobileRepository;
+    private final ConfigurationRepository configurationRepository;
+
+    private final TemperatureRepository temperatureRepository;
 
     private final TemperatureMapper temperatureMapper;
 
     public DeviceConfiguration createConfig(String deviceId, DeviceConfiguration deviceConfiguration) {
-        mobileRepository.addConfiguration(deviceId, deviceConfiguration);
+        configurationRepository.addConfiguration(deviceId, deviceConfiguration);
         return getConfiguration(deviceId);
     }
 
     public DeviceConfiguration getConfiguration(String deviceId) {
-        return mobileRepository.getConfiguration(deviceId);
+        return configurationRepository.getConfiguration(deviceId);
     }
 
     public Temperature getLastTemperature(String deviceId) {
-        return temperatureMapper.map(mobileRepository.getLastTemperature(deviceId));
+        return temperatureMapper.map(temperatureRepository.getLastTemperature(deviceId));
     }
 
     public List<Temperature> getTemperature(String deviceId) {
-        return mobileRepository.getTemerature(deviceId).
+        return temperatureRepository.getTemperature(deviceId).
                 stream().
                 map(temperatureMapper::map)
                 .toList();
