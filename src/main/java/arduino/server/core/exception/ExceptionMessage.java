@@ -1,4 +1,4 @@
-package arduino.server.api.exception;
+package arduino.server.core.exception;
 
 public record ExceptionMessage(String message) {
 }

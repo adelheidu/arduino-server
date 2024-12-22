@@ -3,7 +3,7 @@ package arduino.server.api.controllers;
 import arduino.server.api.ApiPaths;
 import arduino.server.api.model.DeviceConfiguration;
 import arduino.server.api.model.DeviceTemperature;
-import arduino.server.api.service.DeviceService;
+import arduino.server.core.service.DeviceService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;

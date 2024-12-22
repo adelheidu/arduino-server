@@ -1,7 +1,7 @@
 package arduino.server.api.mapper;
 
 import arduino.server.api.model.Temperature;
-import arduino.server.api.model.TemperatureEntity;
+import arduino.server.core.entity.TemperatureEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 

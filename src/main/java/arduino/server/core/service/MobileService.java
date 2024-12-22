@@ -1,10 +1,10 @@
-package arduino.server.api.service;
+package arduino.server.core.service;
 
 import arduino.server.api.mapper.TemperatureMapper;
 import arduino.server.api.model.DeviceConfiguration;
 import arduino.server.api.model.Temperature;
-import arduino.server.api.repository.ConfigurationRepository;
-import arduino.server.api.repository.TemperatureRepository;
+import arduino.server.core.repository.ConfigurationRepository;
+import arduino.server.core.repository.TemperatureRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

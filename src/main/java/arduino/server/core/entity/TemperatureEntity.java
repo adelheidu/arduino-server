@@ -1,4 +1,4 @@
-package arduino.server.api.model;
+package arduino.server.core.entity;
 
 import java.time.OffsetDateTime;
 

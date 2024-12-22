@@ -1,4 +1,4 @@
-package arduino.server.api.exception;
+package arduino.server.core.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

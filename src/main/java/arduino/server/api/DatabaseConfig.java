@@ -1,7 +1,7 @@
 package arduino.server.api;
 
-import arduino.server.api.repository.ConfigurationRepository;
-import arduino.server.api.repository.TemperatureRepository;
+import arduino.server.core.repository.ConfigurationRepository;
+import arduino.server.core.repository.TemperatureRepository;
 import org.jdbi.v3.core.Jdbi;
 import org.jdbi.v3.postgres.PostgresPlugin;
 import org.jdbi.v3.sqlobject.SqlObjectPlugin;

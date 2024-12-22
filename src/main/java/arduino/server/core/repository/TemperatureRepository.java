@@ -1,8 +1,8 @@
-package arduino.server.api.repository;
+package arduino.server.core.repository;
 
 
 import arduino.server.api.model.DeviceTemperature;
-import arduino.server.api.model.TemperatureEntity;
+import arduino.server.core.entity.TemperatureEntity;
 import org.jdbi.v3.sqlobject.config.RegisterConstructorMapper;
 import org.jdbi.v3.sqlobject.customizer.Bind;
 import org.jdbi.v3.sqlobject.customizer.BindMethods;
