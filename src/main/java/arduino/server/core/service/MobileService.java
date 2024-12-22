@@ -28,7 +28,9 @@ public class MobileService {
     }
 
     public DeviceConfiguration getConfiguration(String deviceId) {
-        return configurationRepository.getConfiguration(deviceId);
+        return configurationRepository.getConfiguration(deviceId).orElse(
+                new DeviceConfiguration(0, 30, 30000)
+        );
     }
 
     public Temperature getLastTemperature(String deviceId) {

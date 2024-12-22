@@ -8,6 +8,8 @@ import org.jdbi.v3.sqlobject.customizer.BindMethods;
 import org.jdbi.v3.sqlobject.statement.SqlQuery;
 import org.jdbi.v3.sqlobject.statement.SqlUpdate;
 
+import java.util.Optional;
+
 @RegisterConstructorMapper(value = DeviceConfiguration.class)
 @RegisterConstructorMapper(value = TemperatureEntity.class)
 public interface ConfigurationRepository {
@@ -33,6 +35,6 @@ public interface ConfigurationRepository {
     @SqlQuery("""
             SELECT * from configuration WHERE device_id = :deviceId
             """)
-    DeviceConfiguration getConfiguration(@Bind("deviceId") String deviceId);
+    Optional<DeviceConfiguration> getConfiguration(@Bind("deviceId") String deviceId);
 
 }

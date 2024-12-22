@@ -17,9 +17,8 @@ public class DeviceService {
 
     public DeviceConfiguration registerTemperatureAndSendConfig(String deviceId, DeviceTemperature deviceTemperature) {
         temperatureRepository.registerTemperature(deviceId, deviceTemperature);
-        DeviceConfiguration config = configurationRepository.getConfiguration(deviceId);
-        if (config == null) {
-            return new DeviceConfiguration(-10, 30, 1000);
-        } else return config;
+        return configurationRepository.getConfiguration(deviceId).orElse(
+                        new DeviceConfiguration(0, 30, 30000)
+                );
     }
 }
